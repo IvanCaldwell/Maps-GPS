@@ -19,22 +19,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jG1-KC-HfZ">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPs-6w-buI">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Traveled Destinations" id="kx0-CY-fXC">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Y1u-m1-9aK">
+                                            <connections>
+                                                <action selector="saveButtonClicked:" destination="BYZ-38-t0r" id="Dzt-wa-0mc"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jG1-KC-HfZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2xS-iU-AgP"/>
                             <constraint firstItem="jG1-KC-HfZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FWf-Mi-5r3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jPs-6w-buI" secondAttribute="trailing" id="K9H-cr-DgG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jG1-KC-HfZ" secondAttribute="bottom" id="Psm-IL-lpr"/>
-                            <constraint firstItem="jG1-KC-HfZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lGi-aR-AHB"/>
+                            <constraint firstItem="jG1-KC-HfZ" firstAttribute="top" secondItem="jPs-6w-buI" secondAttribute="bottom" id="Y0b-fW-elT"/>
+                            <constraint firstItem="jPs-6w-buI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fee-UG-n2r"/>
+                            <constraint firstItem="jPs-6w-buI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="s92-rD-iTo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jG1-KC-HfZ" secondAttribute="trailing" id="ySq-05-OaH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="jG1-KC-HfZ" id="lrj-08-146"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="574" y="37"/>
         </scene>
     </scenes>
 </document>
