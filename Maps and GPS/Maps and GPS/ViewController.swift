@@ -35,6 +35,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Requesting authorization or permission to use obtain user's location
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        if let oldCoords = DataStore().GetLastLocation() {
+            let annotation = MKPointAnnotation()
+            annotation.coordinate.latitude = Double(oldCoords.latitude)!
+            annotation.coordinate.longitude = Double(oldCoords.longitude)!
+            
+            // Annotations are little pins
+            annotation.title = "Visited"
+            annotation.subtitle = "This place has great food & beers."
+            mapView.addAnnotation(annotation)
+        }
+        
     }
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
